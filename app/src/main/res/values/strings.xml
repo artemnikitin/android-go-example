@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="action_settings">Settings</string>
+    <string name="image_map">HERE Map with current location</string>
+    <string name="no_location_detected">Can\'t get location</string>
+    <string name="hint">Put address here...</string>
+    <string name="button">Show me!</string>
+</resources>
