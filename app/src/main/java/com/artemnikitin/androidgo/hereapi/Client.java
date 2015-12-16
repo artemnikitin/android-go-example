@@ -17,18 +17,16 @@ public class Client implements Serializable {
     }
 
     public byte[] getImage(double latitude, double longitude, DeviceInfo deviceInfo) {
-        return Hereapi.GetPicture(
+        byte[] result = Hereapi.GetPicture(
                 appId, appToken, latitude, longitude,
                 deviceInfo.getHeight(), deviceInfo.getWidth(),
                 deviceInfo.getDpi());
+        return result == null ? new byte[0]:result;
     }
 
     public Coordinates getCoordinates(String text) {
         String coordinates = Hereapi.GetCoordinates(appId, appToken, text);
-        if (coordinates != null)
-            return new Coordinates(coordinates);
-         else
-            return new Coordinates("0||0");
+        return coordinates == null ? new Coordinates("0||0"):new Coordinates(coordinates);
     }
 
 }

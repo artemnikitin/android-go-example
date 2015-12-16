@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity implements
     protected DeviceInfo mDeviceInfo;
     protected Client client;
     protected ImageView image;
-    protected String apiId = "";
-    protected String apiToken = "";
+    protected String apiId;
+    protected String apiToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
