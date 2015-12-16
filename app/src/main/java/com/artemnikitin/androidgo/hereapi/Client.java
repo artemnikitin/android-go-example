@@ -1,7 +1,5 @@
 package com.artemnikitin.androidgo.hereapi;
 
-import android.util.Log;
-
 import com.artemnikitin.androidgo.DeviceInfo;
 
 import java.io.Serializable;

@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements
         byte[] imageBytes = client.getImage(
                 latitude, longitude, mDeviceInfo);
         Bitmap bitmap = BitmapFactory
-                .decodeByteArray(imageBytes, 0, imageBytes.length);
+                    .decodeByteArray(imageBytes, 0, imageBytes.length);
         image.setImageBitmap(bitmap);
     }
 

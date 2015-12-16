@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,15 +31,15 @@ public class AddressActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String address = textField.getText().toString();
+                Log.d("ANDROID_GO", "Input: " + address);
                 if (client != null) {
-                    if (address.equals("")) {
-
+                    if (!address.equals("")) {
+                        Coordinates coordinates = client.getCoordinates(address);
+                        Intent returnIntent = new Intent();
+                        returnIntent.putExtra("coordinates", coordinates);
+                        setResult(Activity.RESULT_OK, returnIntent);
+                        finish();
                     }
-                    Coordinates coordinates = client.getCoordinates(address);
-                    Intent returnIntent = new Intent();
-                    returnIntent.putExtra("coordinates", coordinates);
-                    setResult(Activity.RESULT_OK, returnIntent);
-                    finish();
                 } else {
                     setResult(Activity.RESULT_CANCELED, new Intent());
                     finish();
