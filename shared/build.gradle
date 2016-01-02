@@ -13,8 +13,7 @@ gobind {
     pkg = "github.com/artemnikitin/android-go-shared"
 
     /* GOPATH where the Go package is; check `go env` */
-    GOPATH = "/Users/nikitin/Dropbox/go"
-    //GOPATH = System.getenv("GOPATH")
+    GOPATH = System.getenv("GOPATH")
 
     /* Absolute path to the go binary */
     //GO = "/usr/local/go/bin"
