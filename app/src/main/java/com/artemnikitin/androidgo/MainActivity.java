@@ -80,9 +80,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    protected void onActivityResult(
-            int requestCode, int resultCode, Intent data
-    ) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
             Coordinates coordinates = (Coordinates) data.getSerializableExtra("coordinates");
             setImage(coordinates.getLatitude(), coordinates.getLongitude());
