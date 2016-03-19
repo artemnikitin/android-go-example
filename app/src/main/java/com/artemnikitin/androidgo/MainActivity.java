@@ -1,5 +1,14 @@
 package com.artemnikitin.androidgo;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
+import com.google.android.gms.location.LocationServices;
+
+import com.artemnikitin.androidgo.hereapi.Client;
+import com.artemnikitin.androidgo.hereapi.Coordinates;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -15,14 +24,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.artemnikitin.androidgo.hereapi.Client;
-import com.artemnikitin.androidgo.hereapi.Coordinates;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
-import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
-import com.google.android.gms.location.LocationServices;
 
 public class MainActivity extends AppCompatActivity implements
         ConnectionCallbacks, OnConnectionFailedListener {
@@ -123,10 +124,8 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void setImage(double latitude, double longitude) {
-        byte[] imageBytes = client.getImage(
-                latitude, longitude, mDeviceInfo);
-        Bitmap bitmap = BitmapFactory
-                    .decodeByteArray(imageBytes, 0, imageBytes.length);
+        byte[] imageBytes = client.getImage(latitude, longitude, mDeviceInfo);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
         image.setImageBitmap(bitmap);
     }
 

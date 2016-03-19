@@ -1,5 +1,8 @@
 package com.artemnikitin.androidgo;
 
+import com.artemnikitin.androidgo.hereapi.Client;
+import com.artemnikitin.androidgo.hereapi.Coordinates;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,9 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import com.artemnikitin.androidgo.hereapi.Client;
-import com.artemnikitin.androidgo.hereapi.Coordinates;
 
 public class AddressActivity extends AppCompatActivity {
 
@@ -36,12 +36,11 @@ public class AddressActivity extends AppCompatActivity {
                         Intent returnIntent = new Intent();
                         returnIntent.putExtra("coordinates", coordinates);
                         setResult(Activity.RESULT_OK, returnIntent);
-                        finish();
                     }
                 } else {
                     setResult(Activity.RESULT_CANCELED, new Intent());
-                    finish();
                 }
+                finish();
             }
         });
     }

@@ -17,10 +17,9 @@ public class Client implements Serializable {
     }
 
     public byte[] getImage(double latitude, double longitude, DeviceInfo deviceInfo) {
-        byte[] result = Hereapi.GetPicture(
-                appId, appToken, latitude, longitude,
-                deviceInfo.getHeight(), deviceInfo.getWidth(),
-                deviceInfo.getDpi());
+        byte[] result = Hereapi.GetPicture(appId, appToken,
+                latitude, longitude, deviceInfo.getHeight(),
+                deviceInfo.getWidth(), deviceInfo.getDpi());
         return result == null ? new byte[0]:result;
     }
 
