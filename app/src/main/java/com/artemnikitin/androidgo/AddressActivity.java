@@ -14,6 +14,7 @@ import android.widget.EditText;
 public class AddressActivity extends AppCompatActivity {
 
     protected EditText textField;
+
     protected Button button;
 
     @Override
@@ -31,7 +32,7 @@ public class AddressActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String address = textField.getText().toString();
                 if (client != null) {
-                    if (!address.equals("")) {
+                    if (address != null && !address.equals("")) {
                         Coordinates coordinates = client.getCoordinates(address);
                         Intent returnIntent = new Intent();
                         returnIntent.putExtra("coordinates", coordinates);
