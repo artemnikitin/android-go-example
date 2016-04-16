@@ -25,15 +25,21 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements
-        ConnectionCallbacks, OnConnectionFailedListener {
+public class MainActivity extends AppCompatActivity
+        implements ConnectionCallbacks, OnConnectionFailedListener {
 
     protected GoogleApiClient mGoogleApiClient;
+
     protected Location mLastLocation;
+
     protected DeviceInfo mDeviceInfo;
+
     protected Client client;
+
     protected ImageView image;
+
     protected String apiId;
+
     protected String apiToken;
 
     @Override
@@ -59,11 +65,8 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .addApi(LocationServices.API)
-                .build();
+        mGoogleApiClient = new GoogleApiClient.Builder(this).addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this).addApi(LocationServices.API).build();
     }
 
     @Override
@@ -113,8 +116,9 @@ public class MainActivity extends AppCompatActivity implements
 
     private void setCredentials() {
         try {
-            ApplicationInfo app = getPackageManager().getApplicationInfo(
-                    this.getApplicationContext().getPackageName(), PackageManager.GET_META_DATA);
+            ApplicationInfo app = getPackageManager()
+                    .getApplicationInfo(this.getApplicationContext().getPackageName(),
+                            PackageManager.GET_META_DATA);
             Bundle bundle = app.metaData;
             apiId = bundle.getString("appid");
             apiToken = bundle.getString("apptoken");

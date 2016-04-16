@@ -5,13 +5,15 @@ import java.io.Serializable;
 public class Coordinates implements Serializable {
 
     private final double latitude;
+
     private final double longitude;
 
     public Coordinates(String coordinates) {
         if (coordinates.contains("||")) {
             int position = coordinates.indexOf("||");
             latitude = Double.parseDouble(coordinates.substring(0, position));
-            longitude = Double.parseDouble(coordinates.substring(position + 2, coordinates.length()));
+            longitude = Double
+                    .parseDouble(coordinates.substring(position + 2, coordinates.length()));
         } else {
             latitude = 0;
             longitude = 0;
