@@ -1,4 +1,5 @@
 # android-go-example
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/e48173d1a215408cb0088fd70260857e)](https://www.codacy.com/app/artemnikitin/android-go-example)    
 Example Android app that used Go mobile
 
 ### Prerequisites
